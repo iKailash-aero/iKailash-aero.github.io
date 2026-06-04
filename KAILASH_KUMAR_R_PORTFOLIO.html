@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kailash Kumar R | Aerospace Engineer Portfolio</title>
+    <style>
+        /* Modern Reset & Theme Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        :root {
+            --primary-color: #0B2545;    /* Deep Navy */
+            --accent-color: #134074;     /* Aero Blue Accent */
+            --text-dark: #1D2A44;
+            --text-light: #616E80;
+            --bg-light: #F4F6F9;
+            --border-color: #D0D7DE;
+            --white: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header / Contact Banner */
+        header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(11, 37, 69, 0.1);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+        header h2 {
+            font-size: 1.25rem;
+            color: #8DA9C4;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+        .contact-links a {
+            color: var(--white);
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+        .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Layout Columns */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 850px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Sections */
+        section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        section h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Professional Summary */
+        .summary-text {
+            font-size: 1.05rem;
+            color: #334155;
+        }
+
+        /* Skills Pill Tags */
+        .skills-category {
+            margin-bottom: 20px;
+        }
+        .skills-category h4 {
+            font-size: 1rem;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-tag {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Experience Timeline Elements */
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .item-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .role-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+        .company-name {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 500;
+            background: var(--bg-light);
+            padding: 3px 10px;
+            border-radius: 12px;
+        }
+        .timeline-item ul {
+            padding-left: 20px;
+            color: #334155;
+            font-size: 0.95rem;
+        }
+        .timeline-item li {
+            margin-bottom: 6px;
+        }
+
+        /* Projects Layout */
+        .project-block {
+            margin-bottom: 30px;
+        }
+        .project-block:last-child {
+            margin-bottom: 0;
+        }
+        .project-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .project-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .project-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        @media (max-width: 600px) {
+            .project-details {
+                grid-template-columns: 1fr;
+            }
+        }
+        .detail-col h5 {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        .detail-col p {
+            font-size: 0.85rem;
+            color: #334155;
+        }
+
+        /* Achievements / Extra Info Cards */
+        .info-card {
+            background: var(--bg-light);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--accent-color);
+            font-size: 0.9rem;
+        }
+        .info-card strong {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Kailash Kumar R</h1>
+            <h2>B.E. Aeronautical Engineering Graduate (2026) | Kumaraguru College of Technology</h2>
+            <div class="contact-links">
+                <a href="mailto:kailashkumar.r@icloud.com">✉ kailashkumar.r@icloud.com</a>
+                <a href="tel:+919445566648">📞 +91 9445566648</a>
+                <a href="https://github.com/iKailash-aero" target="_blank">🐙 GitHub (iKailash-aero)</a>
+                <a href="https://linkedin.com/in/kailash-kumar-r-aero" target="_blank">🔗 LinkedIn Profile</a>
+                <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size:0.85rem;">📍 Hosur, Tamil Nadu</span>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            
+            <div class="left-col">
+                
+                <section id="summary">
+                    <h3>Professional Summary</h3>
+                    <p class="summary-text">
+                        Aeronautical Engineering Graduate with comprehensive, hands-on expertise in structural simulation, composite materials, and UAV design. Proven technical background anchored by multi-week industrial internships spanning aircraft maintenance engineering at TAAL, advanced defensive composites modeling at CUMI, and tactical aerodrome systems operations at local international airports. Experienced team leader from national-level engineering design challenges with specialized capabilities in lightweight aerospace component selection, multi-physics analysis workflows, and validation prototyping.
+                    </p>
+                </section>
+
+                <section id="experience">
+                    <h3>Campuses & Internship Experience</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="item-title-row">
+                            <div>
+                                <div class="role-title">Aircraft Maintenance Intern</div>
+                                <div class="company-name">Taneja Aerospace and Aviation Limited (TAAL)</div>
+                            </div>
+                            <div class="item-date">Dec 2025 – Jan 2026</div>
+                        </div>
+                        <ul>
+                            <li>Performed base maintenance procedures on a Cessna Citation CJ2+ aircraft under supervision of B1 licensed engineering teams, executing systematic airframe inspections and strict tool-handling control protocols.</li>
+                            <li>Audited airworthiness logs and technical maintenance documentation to observe compliance standard baselines across continuous aircraft logbooks.</li>
+                            <li>Studied aerodrome operational environments, including structural aircraft turnaround constraints, airfield ground processing steps, and fundamental communication flows.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="item-title-row">
+                            <div>
+                                <div class="role-title">Project Intern – Advanced Composites</div>
+                                <div class="company-name">Carborundum Universal Limited (CUMI)</div>
+                            </div>
+                            <div class="item-date">Dec 2024 – Apr 2025</div>
+                        </div>
+                        <ul>
+                            <li>Contributed to a structural material optimization evaluation modeling high-strength lightweight composite variations for ballistic protection using ANSYS Material Designer environments.</li>
+                            <li>Supported structural investigations across 60+ matrix layout profiles, analyzing numerical outputs for directional Young's Modulus, Poisson's Ratio, and material density configurations.</li>
+                            <li>Assisted in validating a hybrid layered configuration achieving a weight optimization reduction 6% lighter than baseline traditional manufacturing specifications.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="item-title-row">
+                            <div>
+                                <div class="role-title">Flight Dynamics & Simulation Intern</div>
+                                <div class="company-name">Jet Aerospace Global Drone Hub</div>
+                            </div>
+                            <div class="item-date">Jun 2025 – Jul 2025</div>
+                        </div>
+                        <ul>
+                            <li>Executed unmanned aerial system aerodynamic modeling parameters under guidance from the Aeronautical Sector Skill Council (ASSC), India.</li>
+                            <li>Completed intensive multi-day Drone Intelligent System Training frameworks backed in collaboration with IHFC - Technology Innovation Hub of IIT Delhi.</li>
+                            <li>Conducted airframe optimization profiles, structural configuration tracking, center of gravity (CG) balancing metrics, and flight testing control checks.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="item-title-row">
+                            <div>
+                                <div class="role-title">Airport Operations Intern</div>
+                                <div class="company-name">Airports Authority of India (AAI)</div>
+                            </div>
+                            <div class="item-date">Feb 2026</div>
+                        </div>
+                        <ul>
+                            <li>Observed airside safety constraints, real-time ground tracking flows, cargo handling interfaces, and standard operational navigation systems at Coimbatore International Airport.</li>
+                            <li>Analyzed multi-department communication loops and workflow management loops essential for managing commercial live flight schedules safely.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="projects">
+                    <h3>Key Aerospace Projects</h3>
+                    
+                    <div class="project-block">
+                        <div class="project-title">Hybrid Composite UAV Propeller Design & Analysis</div>
+                        <div class="project-meta">Final Year Capstone Project | Jul 2025 – Apr 2026</div>
+                        <p class="summary-text">
+                            Designed three tailored geometric layout configurations of a 10×8-inch drone propeller utilizing NACA 2412 airfoil profiles. Conducted advanced simulation routines validating aerodynamic efficiency improvements across various material layups.
+                        </p>
+                        <div class="project-details">
+                            <div class="detail-col">
+                                <h5>Computational Fluid Dynamics</h5>
+                                <p>Analyzed velocity vectors, inlet pressures, and surface aerodynamic loads utilizing steady-state solvers in ANSYS Fluent environments.</p>
+                            </div>
+                            <div class="detail-col">
+                                <h5>Laminate Optimization</h5>
+                                <p>Evaluated structural optimization metrics across Carbon Fiber (CFRP), Glass Fiber (GFRP), Kevlar (KFRP), and three specialized hybrid composite layups.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-block">
+                        <div class="project-title">SAEISS Autonomous Drone Design Challenges (ADDC & DDC)</div>
+                        <div class="project-meta">National Level Engineering Competitions | Jan 2025 – Mar 2025</div>
+                        <p class="summary-text">
+                            Served as Technical Lead managing structural component architecture and physical composite fabrication lines for high-efficiency competitive UAV airframes.
+                        </p>
+                        <div class="project-details">
+                            <div class="detail-col">
+                                <h5>Structural Fabrication</h5>
+                                <p>Assembled and hand laid custom Carbon Fiber Reinforced Polymer (CFRP) structures combined with laser-cut balsa layouts and 3D printed components.</p>
+                            </div>
+                            <div class="detail-col">
+                                <h5>Functional Subsystems</h5>
+                                <p>Supported integrations for servo-actuated payload deployment bays, telemetry tracking systems, and electronic navigation architectures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="right-col">
+                
+                <section id="skills">
+                    <h3>Technical Skills</h3>
+                    
+                    <div class="skills-category">
+                        <h4>Simulation & Analysis</h4>
+                        <div class="skills-grid">
+                            <span class="skill-tag">ANSYS Workbench</span>
+                            <span class="skill-tag">ANSYS Fluent (CFD)</span>
+                            <span class="skill-tag">ANSYS Static Structural</span>
+                            <span class="skill-tag">ANSYS Material Designer</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4>CAD & Digital Manufacturing</h4>
+                        <div class="skills-grid">
+                            <span class="skill-tag">CATIA V5</span>
+                            <span class="skill-tag">SolidWorks</span>
+                            <span class="skill-tag">Ultimaker Cura</span>
+                            <span class="skill-tag">Creality Print</span>
+                            <span class="skill-tag">Additive Manufacturing</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4>Aerospace Materials & MRO</h4>
+                        <div class="skills-grid">
+                            <span class="skill-tag">CFRP Fabrication</span>
+                            <span class="skill-tag">KFRP / GFRP Layups</span>
+                            <span class="skill-tag">NDT Techniques</span>
+                            <span class="skill-tag">Aircraft Inspection</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="education">
+                    <h3>Education</h3>
+                    <div class="timeline-item">
+                        <div class="role-title">B.E. Aeronautical Engineering</div>
+                        <div class="company-name">Kumaraguru College of Technology</div>
+                        <div class="item-date" style="display:inline-block; margin-top:5px;">2023 – 2026</div>
+                        <p style="font-size: 0.9rem; margin-top: 5px; font-weight: 600;">CGPA: 8.00 / 10.0</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="role-title">Diploma in Mechanical Engineering</div>
+                        <div class="company-name">Er. Perumal Manimekalai Polytechnic College</div>
+                        <div class="item-date" style="display:inline-block; margin-top:5px;">2020 – 2023</div>
+                        <p style="font-size: 0.9rem; margin-top: 5px; font-weight: 600;">Overall Score: 87.55%</p>
+                    </div>
+                </section>
+
+                <section id="credentials">
+                    <h3>Honors & Certifications</h3>
+                    
+                    <div class="info-card">
+                        <strong>Grade O (Outstanding)</strong><br>
+                        ANSYS Structural Analysis Virtual Internship (AICTE-EduSkills)
+                    </div>
+
+                    <div class="info-card">
+                        <strong>Grade B (Good)</strong><br>
+                        ANSYS Fluid Dynamics Virtual Internship (AICTE-EduSkills)
+                    </div>
+
+                    <div class="info-card">
+                        <strong>2nd Place Winner</strong><br>
+                        Aeromodeling Ideathon (Team Skyprop), Kumaraguru Institutions
+                    </div>
+
+                    <div class="info-card">
+                        <strong>ISTE Best Student Award</strong><br>
+                        Indian Society for Technical Education Academic Excellence Recognition
+                    </div>
+
+                    <div class="info-card">
+                        <strong>NCC Army Wing 'C' Certificate</strong><br>
+                        Demonstrated engineering discipline and leadership validation
+                    </div>
+
+                    <div class="info-card">
+                        <strong>Professional Courses</strong><br>
+                        • Additive Manufacturing (UMich)<br>
+                        • Innovate with ANSYS Simulation (Coursera)<br>
+                        • Ceramics and Composites (ASU)<br>
+                        • Composite Validation & Production (LinkedIn Learning)<br>
+                        • Introduction to Composite Manufacturing (LinkedIn Learning)
+                    </div>
+
+                    <div class="info-card">
+                        <strong>Languages Known</strong><br>
+                        Tamil (Native), English (Fluent)<br>
+                        <span style="color: var(--text-light); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; display: inline-block; margin-top: 4px;">Intermediate:</span> Kannada, Telugu, Hindi
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Kailash Kumar R. Compiled using verified aerospace portfolio blueprints.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
